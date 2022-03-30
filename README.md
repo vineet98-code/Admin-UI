@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# ADMIN UI PROJECT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An interface for Admin users to see, edit and delete users. The users will be provided via an API.
 
-## Available Scripts
+## Endpoints Routes Reference
 
-In the project directory, you can run:
+#### Get all users
 
-### `npm start`
+```http
+  GET http://localhost:5000/users
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Pagination - Use \_page and optionally \_limit to paginate returned data.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```http
+  GET http://localhost:5000/users?_page=4
+  GET http://localhost:5000/users?_page=4limit=20
 
-### `npm test`
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Filter
 
-### `npm run build`
+```http
+  GET http://localhost:5000/users?id=1
+  GET http://localhost:5000/users?name=Mikhail Bill
+  GET http://localhost:5000/users?email=ozgur@mailinator.com
+  GET http://localhost:5000/users?role=admin
+  GET http://localhost:5000/users?role=member
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Slice - Add \_start and \_end or \_limit
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```http
+  GET http://localhost:5000/users?_start=20&_end=30
+```
 
-### `npm run eject`
+#### Database
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```http
+  GET http://localhost:5000/db
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Authors
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [@vineet98-code](https://github.com/vineet98-code)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Run Locally
 
-## Learn More
+Clone the project
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  git clone git@github.com:vineet98-code/Admin-ui.git
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Navigate to the project
 
-### Code Splitting
+```bash
+  cd .\Admin-ui\
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Install dependencies
 
-### Analyzing the Bundle Size
+```bash
+  npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Start the server
 
-### Making a Progressive Web App
+```bash
+  npm run both
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+view client in the browser
 
-### Advanced Configuration
+Local: http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Features
 
-### Deployment
+- Edit/Delete Button
+- Pagination
+- Search By Name Email & Role
+- Export file
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🚀 About Me
 
-### `npm run build` fails to minify
+I’m actively looking for a Full Stack / Front End Developers Role.
+I’m currently learning and upgrading my skills in web development & mobile development.
+Love to work with ReactJS and ExpressJS.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Tech Stack
+
+**Client:** React, Material UI
+
+**Server:** json-server
